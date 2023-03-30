@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+    crossorigin="anonymous">
+
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <style>
+      /* To remove the down arrow by the right of the user avatar in the navbar */
+      .dropdown-toggle::after {
+        content: none;
+      }
+    </style>
+
+    {% block head %}
+
+    {% endblock %}
+  </head>
+
+  <body>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous">
+    </script>
+
+    <!-- jQuery for Data Tables -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- JS for Data Tables -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js">
+    </script>
+
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js">
+    </script>
+
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js">
+    </script>
+
+    <!-- Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'app:index' %}">Employee Manager</a>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false"
+        aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+              href="{% url 'app:employee_list' %}">Employees</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="true">
+                <div class="white-color hover-orange size-24px">
+                  <span>{{ user }}</span>
+                  <i class="fas fa-user"></i>
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end">
+                {% if user.is_authenticated %}
+                  {% if user.is_superuser %}
+                    <a class="dropdown-item" href="{% url 'signup' %}">Create User</a>
+                  {% endif %}
+                  <a class="dropdown-item" href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                  <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                {% endif %}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    {% block body %}
+
+    {% endblock %}
+
+  </body>
+</html>
+

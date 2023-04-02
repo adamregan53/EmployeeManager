@@ -11,9 +11,9 @@ https://www.geeksforgeeks.org/clone-and-run-a-django-project-from-github/
 
 However, when I attempted to run this on a windows machine, I could not run the script to activate the virtual environment which Django needs to run because running scripts is not enabled by default like it is on Ubuntu.
 
-##Commands:
+## Commands:
 
-###Install Packages
+### Install Packages
 ```
 sudo apt install git
 sudo apt install python3
@@ -21,13 +21,13 @@ sudo apt install pip
 sudo apt install python3.8-venv
 ```
 
-###Enable Virtual Enviroment
+### Enable Virtual Enviroment
 ```
 python3 -m venv venv
 source venv/bin/activate 
 ```
 
-###Clone Repository
+### Clone Repository
 ```
 git clone --branch secure https://github.com/adamregan53/EmployeeManager.git
 ```
@@ -37,19 +37,19 @@ OR
 git clone --branch insecure https://github.com/adamregan53/EmployeeManager.git
 ```
 
-###Move venv into project directory
+### Move venv into project directory
 ```
 mv venv EmployeeManager
 cd EmployeeManager
 ```
 
-###Install project requirements
+### Install project requirements
 ```
 pip install -r requirements.txt
 pip install crispy-bootstrap5
 ```
 
-###Run Server
+### Run Server
 ```
 python manage.py runserver
 ```

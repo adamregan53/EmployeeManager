@@ -1,5 +1,7 @@
 # EmployeeManager
 
+This is a Django application that allows a user to manage employee data. A user can Create, Read, Update and Delete employee records. An admin user can create new users. These users can log in with their credentials. The aim of this project is to demonstrate web security meansures.
+
 I created this code on Ubuntu 20.04 so all the commands I will list to run the application will be for linux.
 
 I attempted to create a docker image for this project but the requirements would not install on the docker image and I could not resolve the issue.

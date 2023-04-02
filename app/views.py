@@ -70,3 +70,6 @@ def search_employees(request):
 
         html = render_to_string('app/search_employees.html', {'employee_list':employees})
         return HttpResponse(html)
+    
+def error_404_view(request, exception):
+    return render(request, '404.html')

@@ -1,0 +1,30 @@
+{% extends "app/base.html" %}
+
+
+    {% block content %}
+
+      <div class="container">
+        <div class="card mt-4">
+          <div class="card-body text-center">
+            <h1 class="text-center display-4">Welcome</h1>
+            {% if user.is_authenticated %}
+              <p>You are logged in as {{user.username}}</p>
+              <div class="mb-3">
+                <a href="{% url 'app:employee_list' %}" class="">View Employees</a>
+              </div>
+              <div class="d-grid gap-2 w-25 mx-auto">
+                {% if user.is_superuser %}
+                  <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Create User</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" class="btn btn-secondary btn-lg">Logout</a>
+              </div>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Sign In</a>
+            {% endif %} 
+          </div>
+        </div>
+      </div>
+
+    {% endblock %}
+
+

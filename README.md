@@ -20,6 +20,7 @@ However, when I attempted to run this on a windows machine, I could not run the 
 sudo apt install git
 sudo apt install python3
 sudo apt install pip
+sudo python3 -m pip install Django
 sudo apt install python3.8-venv
 ```
 

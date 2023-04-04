@@ -15,6 +15,7 @@ However, when I attempted to run this on a windows machine, I could not run the 
 
 ## Login Credentials:
 Username: admin
+
 Password: EmployeeManager321!
 
 ## Commands:

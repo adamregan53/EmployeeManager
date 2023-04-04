@@ -13,6 +13,10 @@ https://www.geeksforgeeks.org/clone-and-run-a-django-project-from-github/
 
 However, when I attempted to run this on a windows machine, I could not run the script to activate the virtual environment which Django needs to run because running scripts is not enabled by default like it is on Ubuntu.
 
+##Login Credentials:
+Username: admin
+Password: EmployeeManager321!
+
 ## Commands:
 
 ### Install Packages
